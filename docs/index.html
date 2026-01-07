@@ -1,133 +1,252 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Agendamento</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agende com a Torres 💅</title>
+
+  <!-- Open Graph: deixa bonito quando mandar o link -->
+  <meta property="og:title" content="Agende sua unha com a Torres 💅">
+  <meta property="og:description" content="Agende de forma fácil e rápida! Entre em contato pelo WhatsApp.">
+  <meta property="og:image" content="URL_DA_SUA_IMAGEM_BONITA.png">
+  <meta property="og:url" content="https://teunome.github.io/seusite">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f3eafc; /* roxo bebê */
+      color: #4b2e83;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      color: #fff;
+      background-color: #d9b3ff;
+    }
+
+    .botao {
+      display: block;
+      width: 80%;
+      max-width: 400px;
+      margin: 15px auto;
+      padding: 15px;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #b57cff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #9855ff;
+    }
+
+    section {
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 500px;
+      text-align: left;
+      background-color: #ffffffcc;
+      border-radius: 15px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4b2e83;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    input, textarea, select, button.submit {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #c9a3ff;
+      font-size: 1em;
+    }
+
+    button.submit {
+      margin-top: 15px;
+      background-color: #b57cff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: 0.3s;
+    }
+
+    button.submit:hover {
+      background-color: #9855ff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #b57cff;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    .ocupado {
+      color: red;
+    }
+
+    @media(max-width: 600px){
+      body { font-size: 16px; }
+      header { font-size: 1.5em; }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="logo.png" class="logo">
+<header>Agende com a Torres 💅</header>
 
-    <h1>Agendamento</h1>
-    <p>Reserve seu horário online</p>
+<!-- Botões tipo link na bio -->
+<a class="botao" href="#formulario">Agendar</a>
+<a class="botao" href="https://wa.me/5591999999999" target="_blank">WhatsApp</a>
+<a class="botao" href="https://instagram.com/seuusuario" target="_blank">Instagram</a>
+<a class="botao" href="#servicos">Serviços</a>
+<a class="botao" href="#admin">Painel Admin</a>
 
-    <form id="form">
-      <label>Nome</label>
-      <input type="text" required>
+<!-- Formulário Agendamento -->
+<section id="formulario">
+  <h2>Agendamento 💖</h2>
+  <form id="agendamentoForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
 
-      <label>Serviço</label>
-      <select required>
-        <option value="">Selecione</option>
-        <option>Gel</option>
-        <option>Manutenção</option>
-        <option>Manicure</option>
-      </select>
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="telefone" required>
 
-      <label>Data</label>
-      <input type="date" required>
+    <label for="data">Data:</label>
+    <input type="date" id="data" name="data" required>
 
-      <label>Horário</label>
-      <select id="horarios" required>
-        <option value="">Selecione</option>
-      </select>
+    <label for="horario">Horário:</label>
+    <select id="horario" name="horario" required></select>
 
-      <button type="submit">Reservar</button>
-    </form>
+    <label for="observacao">Observação:</label>
+    <textarea id="observacao" name="observacao" rows="3"></textarea>
 
-    <a class="whatsapp" href="https://wa.me/5581971089806" target="_blank">
-      Falar no WhatsApp
-    </a>
-  </div>
+    <button type="submit" class="submit">Agendar</button>
+  </form>
+</section>
 
-  <script src="script.js"></script>
+<!-- Serviços -->
+<section id="servicos">
+  <h2>Serviços 💖</h2>
+  <ul>
+    <li>💅 Manicure</li>
+    <li>💜 Pedicure</li>
+    <li>✨ Alongamento de unhas</li>
+    <li>💖 Nail art personalizada</li>
+  </ul>
+</section>
+
+<!-- Painel Admin -->
+<section id="admin">
+  <h2>Painel Admin (Simulado)</h2>
+  <table id="tabelaAgendamentos">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Agendamentos vão aparecer aqui -->
+    </tbody>
+  </table>
+</section>
+
+<script>
+  // Simulação de horários ocupados
+  const horariosOcupados = ["09:00", "10:00"]; // depois pega do Firebase
+  const select = document.getElementById('horario');
+
+  // Função pra gerar horários baseados no dia
+  function gerarHorarios(dataSelecionada){
+    select.innerHTML = "";
+    const dia = new Date(dataSelecionada).getDay(); // 0-domingo, 6-sábado
+    let horarios = [];
+    if(dia >= 1 && dia <= 5){ // Segunda a sexta - manhã
+      horarios = ["08:00","09:00","10:00","11:00","12:00"];
+    } else if(dia == 6){ // sábado
+      horarios = ["08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"];
+    } else if(dia == 0){ // domingo
+      horarios = ["08:00","09:00","10:00","11:00","12:00","13:00"];
+    }
+    horarios.forEach(h => {
+      const option = document.createElement('option');
+      option.value = h;
+      option.textContent = h + (horariosOcupados.includes(h) ? " ❌" : "");
+      option.disabled = horariosOcupados.includes(h);
+      select.appendChild(option);
+    });
+  }
+
+  document.getElementById('data').addEventListener('change', (e)=>{
+    gerarHorarios(e.target.value);
+  });
+
+  // Formulário
+  const form = document.getElementById('agendamentoForm');
+  const tabela = document.getElementById('tabelaAgendamentos').querySelector('tbody');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const telefone = document.getElementById('telefone').value;
+    const data = document.getElementById('data').value;
+    const hora = document.getElementById('horario').value;
+    const observacao = document.getElementById('observacao').value;
+
+    if(!hora){ alert("Escolha um horário válido!"); return; }
+
+    // Simula bloqueio
+    horariosOcupados.push(hora);
+
+    // Adiciona na tabela admin
+    const row = tabela.insertRow();
+    row.insertCell(0).textContent = nome;
+    row.insertCell(1).textContent = telefone;
+    row.insertCell(2).textContent = data;
+    row.insertCell(3).textContent = hora;
+    row.insertCell(4).textContent = observacao;
+
+    alert(`Agendamento confirmado!\n\nNome: ${nome}\nTelefone: ${telefone}\nData: ${data}\nHora: ${hora}\nObservação: ${observacao}`);
+
+    form.reset();
+    select.innerHTML = "";
+  });
+</script>
+
 </body>
 </html>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
-body {
-  background: #f8eaf1;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
-
-.container {
-  max-width: 420px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: center;
-}
-
-.logo {
-  width: 120px;
-  margin-bottom: 15px;
-}
-
-h1 {
-  color: #c2185b;
-  margin-bottom: 5px;
-}
-
-p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  text-align: left;
-  font-size: 13px;
-  margin-top: 12px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-}
-
-button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  border-radius: 30px;
-  border: none;
-  background: #c2185b;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.whatsapp {
-  display: block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #25d366;
-  font-weight: 500;
-}
-const horarios = [
-  "07:00","08:00","09:00","10:00","11:00",
-  "12:00","13:00","14:00","15:00","16:00",
-  "17:00","18:00"
-];
-
-const select = document.getElementById("horarios");
-
-horarios.forEach(h => {
-  const opt = document.createElement("option");
-  opt.value = h;
-  opt.textContent = h;
-  select.appendChild(opt);
-});
-
-document.getElementById("form").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Horário reservado. Confirmação pelo WhatsApp.");
-});
