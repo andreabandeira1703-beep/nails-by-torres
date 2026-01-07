@@ -1,53 +1,133 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Nails by Torres</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f6eefb;
-      color: #3a1c5a;
-      text-align: center;
-    }
-    header {
-      background: #6a2ca0;
-      color: white;
-      padding: 30px 20px;
-    }
-    section {
-      padding: 30px 20px;
-    }
-    .botao {
-      display: inline-block;
-      background: #8e44ad;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Agendamento</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Nails by Torres</h1>
-  <p>Agendamento online</p>
-</header>
+  <div class="container">
+    <img src="logo.png" class="logo">
 
-<section>
-  <p>Atendimentos de segunda a sexta pela manhã, sábado o dia todo e domingo pela manhã.</p>
-  <a class="botao" href="#agenda">Agendar horário</a>
-</section>
+    <h1>Agendamento</h1>
+    <p>Reserve seu horário online</p>
 
-<section id="agenda">
-  <p>Agenda em construção 💅✨</p>
-</section>
+    <form id="form">
+      <label>Nome</label>
+      <input type="text" required>
 
+      <label>Serviço</label>
+      <select required>
+        <option value="">Selecione</option>
+        <option>Gel</option>
+        <option>Manutenção</option>
+        <option>Manicure</option>
+      </select>
+
+      <label>Data</label>
+      <input type="date" required>
+
+      <label>Horário</label>
+      <select id="horarios" required>
+        <option value="">Selecione</option>
+      </select>
+
+      <button type="submit">Reservar</button>
+    </form>
+
+    <a class="whatsapp" href="https://wa.me/5581971089806" target="_blank">
+      Falar no WhatsApp
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+body {
+  background: #f8eaf1;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 420px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  color: #c2185b;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: #c2185b;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.whatsapp {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #25d366;
+  font-weight: 500;
+}
+const horarios = [
+  "07:00","08:00","09:00","10:00","11:00",
+  "12:00","13:00","14:00","15:00","16:00",
+  "17:00","18:00"
+];
+
+const select = document.getElementById("horarios");
+
+horarios.forEach(h => {
+  const opt = document.createElement("option");
+  opt.value = h;
+  opt.textContent = h;
+  select.appendChild(opt);
+});
+
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("Horário reservado. Confirmação pelo WhatsApp.");
+});
